@@ -10,7 +10,6 @@ public class CharDemo2 {
         System.out.println("now ch1 is " + ch1);
 
         char ch2;
-        ch2 = 'A';
         for (ch2 = 'A'; ch2 <= 'Z'; ch2++) {
             System.out.println(ch2);
 
