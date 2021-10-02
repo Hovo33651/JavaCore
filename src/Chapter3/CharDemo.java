@@ -17,6 +17,13 @@ public class CharDemo {
         System.out.print("ch1 and ch2: ");
         System.out.println(ch1 + " " + ch2);
 
+        char p1, p2, p3;
+        p1 = 74;
+        p2 = 65;
+        p3 = 86;
+        System.out.println(p1 + "" + p2 + "" + p3 + "" + p2);
 
     }
+
+
 }
