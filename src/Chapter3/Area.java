@@ -11,7 +11,7 @@ public class Area {
 
         int q = 20;
         int b = 25;
-        double c = Math.sqrt((q * q) + (b * b));
+        double c = Math.sqrt(q * q + b * b);
         int angle_qb = 90;
         int angle_bc = 43;
         int angle_qc = 47;
