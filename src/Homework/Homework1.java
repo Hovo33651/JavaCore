@@ -7,9 +7,14 @@ public class Homework1 {
             for (int j = 0; j < i - 1; j++) {
                 System.out.print('*');
             }
-            System.out.println('*');}
+            System.out.println('*');
+        }
+
     }
+
 }
+
+
 /*             ցիկլ1 i=1, j=0, 0<1-1, 2-րդ ցիկլը false, անցավ առաջին ցիկլի println-ը կատարմանը,
                                             *
 
