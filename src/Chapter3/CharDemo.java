@@ -22,7 +22,6 @@ public class CharDemo {
         p2 = 65;
         p3 = 86;
         System.out.println(p1 + "" + p2 + "" + p3 + "" + p2);
-
     }
 
 
