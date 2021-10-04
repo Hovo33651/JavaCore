@@ -7,9 +7,6 @@ public class Homework1Backwords {
                 System.out.print("*");
             }
             System.out.println("*");
-
-
         }
-
     }
 }
