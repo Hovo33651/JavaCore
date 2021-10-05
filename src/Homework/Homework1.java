@@ -9,7 +9,7 @@ public class Homework1 {
             }
             System.out.println("*");
         }
-        System.out.println(" ");
+        System.out.println();
 
 
 
@@ -24,7 +24,7 @@ public class Homework1 {
             }
             System.out.println("*");
         }
-        System.out.println(" ");
+        System.out.println();
 
 
 
