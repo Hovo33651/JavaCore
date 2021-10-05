@@ -12,8 +12,6 @@ public class FigurePainter {
         System.out.println();
 
 
-
-
         for (int i = 1; i < 5; i++) {
             for (int j = i - 2; j < 3; j++) {
                 System.out.print("  ");
@@ -27,9 +25,7 @@ public class FigurePainter {
         System.out.println();
 
 
-
-
-       for (int i = 1; i < 5; i++) {
+        for (int i = 1; i < 5; i++) {
             for (int j = i - 1; j < 3; j++) {
                 System.out.print("* ");
             }
