@@ -61,10 +61,19 @@ public class ArrayUtil {
 
         int oddCount = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 > 0){
+            if (array[i] % 2 > 0) {
                 oddCount++;
             }
         }
         System.out.println("odd numbers count is " + oddCount);
-}
+
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum = sum + array[i];
+        }
+        System.out.println("massive values sum is " + sum);
+        double average = (double) sum / array.length;
+        System.out.println("massive values arithmetic average is " + average);
+
+    }
 }
