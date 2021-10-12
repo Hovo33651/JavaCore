@@ -1,6 +1,6 @@
 package Homework.arrayutil;
 
-public class NewEvenValuesArray {
+public class NewValuesArray {
 
     public static void main(String[] args) {
 
