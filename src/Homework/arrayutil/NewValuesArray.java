@@ -20,34 +20,35 @@ public class NewValuesArray {
                 oddNumber++;
             }
         }
-        int[] evenNumbers = new int[array.length - oddNumber];
+        int[] evenNumbersArray = new int[array.length - oddNumber];
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
-                evenNumbers[count] = array[i];
+                evenNumbersArray[count] = array[i];
                 count++;
             }
         }
 
-        for (int i = 0; i < evenNumbers.length; i++) {
+        for (int i = 0; i < evenNumbersArray.length; i++) {
             if (i == 0) {
-                System.out.print("evenNumber massive values are: ");
+                System.out.print("evenNumbersArray values are: ");
             }
-            System.out.print(evenNumbers[i] + " ");
+            System.out.print(evenNumbersArray[i] + " ");
         }
         System.out.println();
 
-        int[] oddNumbers = new int[oddNumber];
+        int[] oddNumbersArray = new int[oddNumber];
         for (int i = 0; i < array.length; i++) {
-            if (i==0){
-                System.out.print("oddNumbers massive values are: ");
+            if (i == 0) {
+                System.out.print("oddNumbersArray values are: ");
             }
-            if(array[i] % 2 > 0){
-                System.out.print(array[i] + " ");;
+            if (array[i] % 2 > 0) {
+                System.out.print(array[i] + " ");
+                ;
             }
 
         }
 
 
     }
-    }
+}
