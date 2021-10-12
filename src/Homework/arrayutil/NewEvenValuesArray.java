@@ -6,6 +6,15 @@ public class NewEvenValuesArray {
 
         int[] array = {70, 80, 65, 116, 258, 756, 115, 100};
 
+        for (int i = 0; i < array.length; i++) {
+            if (i == 0) {
+                System.out.print("array massive values are: ");
+            }
+            System.out.print(array[i] + " ");
+
+        }
+        System.out.println();
+
         int oddNumbers = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 > 0) {
@@ -25,7 +34,10 @@ public class NewEvenValuesArray {
         }
 
         for (int i = 0; i < evenNumbers.length; i++) {
-            System.out.println(evenNumbers[i] + " ");
+            if (i == 0) {
+                System.out.print("evenNumber massive values are: ");
+            }
+            System.out.print(evenNumbers[i] + " ");
 
         }
 
