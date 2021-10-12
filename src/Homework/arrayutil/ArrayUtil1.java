@@ -1,6 +1,6 @@
 package Homework.arrayutil;
 
-public class Array {
+public class ArrayUtil1 {
 
     public static void main(String[] args) {
 
