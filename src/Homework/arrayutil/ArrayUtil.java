@@ -3,7 +3,7 @@ package Homework.arrayutil;
 public class ArrayUtil {
     public static void main(String[] args) {
 
-        int[] array = {5, 7, 8, 11, 14, 3, 2, 4, 15, 80};
+        int[] array = {5, 7, 8, 11, 14, 80, 3, 2, 4, 15,};
 
 
         for (int i = 0; i < array.length; i++) {
@@ -12,15 +12,15 @@ public class ArrayUtil {
 
         System.out.println();
 
+
         int maxValue = array[0];
-
-
         for (int i = 1; i < array.length; i++) {
             if (array[i] > maxValue) {
                 maxValue = array[i];
             }
         }
-        System.out.println("massive max value is " + maxValue);
+        System.out.println("massive max value is: " + maxValue);
+
 
         int minValue = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -28,12 +28,12 @@ public class ArrayUtil {
                 minValue = array[i];
             }
         }
-        System.out.println("massive min value is " + minValue);
+        System.out.println("massive min value is: " + minValue);
 
 
         for (int i = 0; i < array.length; i++) {
             if (i == 0) {
-                System.out.print("massive even numbers are " + " ");
+                System.out.print("massive even numbers are: " + " ");
             }
             if (array[i] % 2 == 0) {
                 System.out.print(array[i] + " ");
@@ -43,7 +43,7 @@ public class ArrayUtil {
 
         for (int i = 0; i < array.length; i++) {
             if (i == 0) {
-                System.out.print("massive odd numbers are " + " ");
+                System.out.print("massive odd numbers are: " + " ");
             }
             if (array[i] % 2 > 0) {
                 System.out.print(array[i] + " ");
@@ -57,7 +57,7 @@ public class ArrayUtil {
                 evenCount++;
             }
         }
-        System.out.println("even numbers count is " + evenCount);
+        System.out.println("the number of even values is: " + evenCount);
 
         int oddCount = 0;
         for (int i = 0; i < array.length; i++) {
@@ -65,15 +65,15 @@ public class ArrayUtil {
                 oddCount++;
             }
         }
-        System.out.println("odd numbers count is " + oddCount);
+        System.out.println("the number of odd values is: " + oddCount);
 
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum = sum + array[i];
         }
-        System.out.println("massive values sum is " + sum);
+        System.out.println("massive values sum is: " + sum);
         double average = (double) sum / array.length;
-        System.out.println("massive values arithmetic average is " + average);
+        System.out.println("massive values arithmetic average is: " + average);
 
     }
 }
