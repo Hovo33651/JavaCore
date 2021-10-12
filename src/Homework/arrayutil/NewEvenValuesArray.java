@@ -4,7 +4,7 @@ public class NewEvenValuesArray {
 
     public static void main(String[] args) {
 
-        int[] array = {70, 80, 65, 115, 100};
+        int[] array = {70, 80, 65,116, 258, 756, 115, 100};
 
         int[] evenNumbers = new int[array.length];
         int count = 0;
