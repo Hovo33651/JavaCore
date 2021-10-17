@@ -32,7 +32,7 @@ public class CharBabola {
 
 
 
-        char[] bolola1 = {b', 'a', 'b', 'o', 'l', 'a'};
+        char[] bolola1 = {'b', 'a', 'b', 'o', 'l', 'a'};
 
         for (int i = 0; i < bolola1.length; i++) {
             if (bolola1[i] == 'b') {
