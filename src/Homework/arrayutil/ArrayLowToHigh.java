@@ -1,6 +1,6 @@
 package Homework.arrayutil;
 
-public class ArraySortExample {
+public class ArrayLowToHigh {
     public static void main(String[] args) {
 
 
