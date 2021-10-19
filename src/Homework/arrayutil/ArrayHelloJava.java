@@ -29,6 +29,7 @@ public class ArrayHelloJava {
             }
             System.out.print(result[index]);
         }
+
     }
 }
 
