@@ -3,35 +3,34 @@ package Homework.arrayutil;
 public class ArrayHelloJava {
     public static void main(String[] args) {
 
-        char[] barev = {' ', ' ', ' ', 'h', 'e', 'l', 'l', 'o', ' ', ' ',
+        char[] text = {' ', ' ', ' ', 'h', 'e', 'l', 'l', 'o', ' ', ' ',
                 'j', 'a', 'v', 'a', ' ', ' '};
 
         // Գրել կոդ, որը կջնջի միայն սկզբի ու վերջի պռոբելները
         int index = 0;
         int i = 0;
-        char[] result = new char[barev.length];
-        for (i = 0; i < barev.length; i++) {
-            if (barev[i] == ' ')
+        char[] result = new char[text.length];
+        for (i = 0; i < text.length; i++) {
+            if (text[i] == ' ')
                 continue;
-            else if(barev[i] != ' ') {
+            else if (text[i] != ' ') {
                 index++;
-                result[index] = barev[i];
+                result[index] = text[i];
                 break;
             }
         }
-            for (int j = i; j < barev.length; j++) {
-                if (barev[j] == ' ') {
-                    index++;
-                    result[index] = barev[j];
-                }
-                else if (barev[j] != ' ') {
-                    index++;
-                    result[index] = barev[j];
-                }
-                System.out.print(result[index]);
+        for (int j = i; j < text.length; j++) {
+            if (text[j] == ' ') {
+                index++;
+                result[index] = text[j];
+            } else if (text[j] != ' ') {
+                index++;
+                result[index] = text[j];
             }
+            System.out.print(result[index]);
         }
     }
+}
 
 
 
