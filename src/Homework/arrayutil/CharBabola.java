@@ -51,18 +51,15 @@ public class CharBabola {
                 index++;
             }
         }
-
         char[] result = new char[text.length - index];
 
         int a = 0;
-
         for (int i = 0; i < text.length; i++) {
             if (text[i] != ' ') {
                 result[a] = text[i];
                 a++;
             }
         }
-
         for (int i = 0; i < result.length; i++) {
             System.out.print(result[i]);
         }
