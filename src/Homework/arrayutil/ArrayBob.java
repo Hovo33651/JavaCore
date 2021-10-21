@@ -15,6 +15,5 @@ public class ArrayBob {
                 found = true;
         }
         System.out.println(found);
-
     }
 }
