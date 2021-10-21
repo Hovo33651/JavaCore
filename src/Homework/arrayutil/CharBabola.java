@@ -26,7 +26,7 @@ public class CharBabola {
         }
 
         //Տպել true եթե մասսիվի մեջ կա b simbole b, եթե չկա, տպել false
-        char[] bolola1 = {'a', 'l', 'a', 'b', 'o', 'b', 'a'};
+        char[] bolola1 = {'a', 'l', 'a', 'c', 'o', 'b', 'a'};
 
         for (int i = 0; i < bolola1.length; i++) {
             if (bolola1[i] != 'b')
@@ -41,6 +41,8 @@ public class CharBabola {
         if (bolola[bolola.length - 2] == 'l' && bolola[bolola.length - 1] == 'y') {
             System.out.println("true");
         } else System.out.println("false");
+
+
 
         // Սարքել նոր մասսիվ, որը պարունակի մենակ barev-ը
         char[] text = {' ', ' ', 'b', 'a', 'r', 'e', 'v', ' ', ' '};
