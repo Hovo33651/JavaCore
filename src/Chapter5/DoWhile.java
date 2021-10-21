@@ -7,6 +7,8 @@ public class DoWhile {
 
         do{
             System.out.println("cycle: " + n);
-        }while (--n > 10);
+
+        }while (--n > 0);
     }
 }
+
