@@ -5,7 +5,6 @@ public class CharBabola {
 
         char[] bolola = {'b', 'o', 'l', 'o', 'l', 'a','b','f'};
 
-
         // Քանի 'o' ունի bolola մասսիվը
         System.out.print("bolola has ");
         int o = 0;
