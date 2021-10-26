@@ -6,15 +6,15 @@ public class Search {
 
         int[] nums = {6, 8, 3, 7, 6, 1, 4};
         int val = 5;
-        boolean found =  false;
+        boolean found = false;
 
         for (int num : nums) {
-            if(num ==  val){
+            if (num == val) {
                 found = true;
                 break;
             }
         }
-        if(found) System.out.println("gtanq");
+        if (found) System.out.println("gtanq");
         else System.out.println("kuku");
     }
 }
