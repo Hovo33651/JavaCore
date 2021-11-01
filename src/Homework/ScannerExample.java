@@ -12,7 +12,6 @@ public class ScannerExample {
 
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
-        loop:
         for (int i = 0; i < i + 1; i++) {
             System.out.println("Please, input your first number");
             int a = scanner.nextInt();
@@ -36,24 +35,24 @@ public class ScannerExample {
                     System.out.println(calculator.bazmapatkum(a, b));
                     break;
                 default:
-                    System.out.println("Invalid input. Please, try again");
+                    System.out.println("Invalid input");
             }
-            char choice;
-            System.out.println("If you want to exit press # ");
-            System.out.println("If you want to continue press !");
-            choice = (char) System.in.read();
+            loop1:
+            for (int j = 0; j < j + 1; j++) {
+                char choice;
+                    System.out.println("Press # to finish ");
+                    System.out.println("Press any key to start again");
+                    choice = (char) System.in.read();
 
-            System.out.println();
+                    System.out.println();
 
-            switch (choice) {
-                case '#':
-                    System.out.println("Good Bye!!!");
-                    break loop;
-                case '!':
-                    continue loop;
-                default:
-                    System.out.println("Please, press ! to continue, or # to finish");
+                    if (choice == '#') {
+                        System.out.println("Good Bye!!!");
+                        return;
+                    }else{
+                            break loop1;
+                    }
+                }
             }
         }
     }
-}
