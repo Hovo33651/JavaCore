@@ -6,12 +6,12 @@ public class DynamicArrayTest {
 
         DynamicArray da = new DynamicArray();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 11; i++) {
             da.add(i);
         }
-        da.print();
-
-        System.out.println(da.getByIndex(0));
+          da.print();
+        System.out.println();
+        System.out.println(da.getByIndex(9));
     }
 }
 

@@ -9,9 +9,9 @@ public class DynamicArray {
     public void add(int value) {
         if (array[array.length - 1] != 0) {
             extend();
+            array[size++] = value;
         } else {
-            array[size] = value;
-            size++;
+            array[size++] = value;
         }
     }
 
@@ -24,12 +24,11 @@ public class DynamicArray {
     }
 
     int getByIndex(int index) {
-        if (index > array.length || index < 0) {
+        if (index > array.length - 1 || index < 0) {
             return -1;
         }
         return array[index];
     }
-
 
     public void print() {
         for (int i = 0; i < size; i++) {
