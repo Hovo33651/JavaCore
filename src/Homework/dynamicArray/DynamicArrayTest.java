@@ -9,7 +9,7 @@ public class DynamicArrayTest {
         for (int i = 1; i < 11; i++) {
             da.add(i);
         }
-          da.print();
+        da.print();
         System.out.println();
         System.out.println(da.getByIndex(9));
     }
