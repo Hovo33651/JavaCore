@@ -11,9 +11,10 @@ public class DynamicArrayTest {
         }
         da.print();
         System.out.println();
-        System.out.println(da.getByIndex(9));
+        for (int i = 0; i < 15; i++) {
+            System.out.print(da.getByIndex(i) + " ");
+        }
     }
 }
-
 
 
