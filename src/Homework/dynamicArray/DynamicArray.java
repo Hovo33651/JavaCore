@@ -9,7 +9,7 @@ public class DynamicArray {
     // ստուգել, եթե մասիվը դատարկ է՝ ավելացնել թվեր,
     // եթե դատարկ չէ՝ ավելացնել լենգթը extend() մեթոդով ու ավելացնել թվերը
     public void add(int value) {
-        if (array[array.length - 1] != 0) {
+        if (size ==  array.length) {
             extend();
             array[size++] = value;
         } else {
