@@ -29,17 +29,15 @@ public class BraceChecker {
             if (c == '(' || c == '{' || c == '[') {
                 stack.push(c);
             } else if (c == ')' || c == ']' || c == '}') {
-                char pop;
+                char pop = stack.pop();
                 switch (c) {
                     case ')':
-                        pop = stack.pop();
-                        if (stack.pop() == '[') {
+                        if (pop == '[') {
                             System.err.println("Error: opened [ but closed ) in index " + (index) + " element");
                         }
                         if (pop == '{')
                             System.err.println("Error: opened { but closed ) in index " + (index) + " element");
                     case ']':
-                        pop = stack.pop();
                         if (pop == '(') {
                             System.err.println("Error: opened ( but closed ] in index " + (index) + " element");
                         }
@@ -47,7 +45,6 @@ public class BraceChecker {
                             System.err.println("Error: opened { but closed ] in index " + (index) + " element");
                         }
                     case '}':
-                        pop = stack.pop();
                         if (pop == '[') {
                             System.err.println("Error: opened [ but closed } in index " + (index) + " element");
                         }
@@ -58,4 +55,5 @@ public class BraceChecker {
             }
         }
     }
+
 }
