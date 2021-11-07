@@ -14,8 +14,8 @@ public class BraceChecker {
     //կլասի կոնստրուկտերն է, որը պետք է ընդունի String տիպի տեքստ և վերագրիվերևի տեքստին
     //որ չկարողանանք breacjchecker-ի օբյեկտ սարքենք առանց text-
     // տալու կոնստրուկտորի միջոցով
-    public BraceChecker(String i) {
-        text = i;
+    public BraceChecker(String text1) {
+        text = text1;
     }
 
     //Սա հիմնական մեթոդն է, որի մեջ գրելու ենք ամբողջ լոգիկան, աշխատելու ենք թե stack-ի
