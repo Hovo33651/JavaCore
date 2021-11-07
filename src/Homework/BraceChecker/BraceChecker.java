@@ -22,39 +22,53 @@ public class BraceChecker {
             c = text.charAt(i);
             ++index;
             if (c == '(' || c == '{' || c == '[') {
-                stack.push(c);
+                Stack.push(c);
             } else if (c == ')' || c == ']' || c == '}') {
                 char pop = stack.pop();
                 switch (c) {
                     case ')':
                         switch (pop) {
                             case '[':
-                                System.err.println("Error: opened [ but closed ) in index " + index + " element");
+                                System.err.println("Error: opened '[' but closed ')'..." + "\n" + "|" + text + "|'s" + " element #" + (index + 1) + " needs to be ']'!!!");
                                 break;
                             case '{':
-                                System.err.println("Error: opened { but closed ) in index " + index + " element");
+                                System.err.println("Error: opened '{' but closed ')'..." + "\n" + "|" + text + "|'s" + " element #" + (index + 1) + " needs to be '}'!!!");
                                 break;
+                            case '(':
+                                break;
+                            default:
+                                System.err.println("Error: there is no opened '('...");
                         }
                         break;
                     case ']':
                         switch (pop) {
                             case '(':
-                                System.err.println("Error: opened ( but closed ] in index " + index + " element");
+                                System.err.println("Error: opened '(' but closed ']'..." + "\n" + "|" + text + "|'s" + " element #" + (index + 1) + " needs to be ')'!!!");
                                 break;
                             case '{':
-                                System.err.println("Error: opened { but closed ] in index " + index + " element");
+                                System.err.println("Error: opened '{' but closed ']'..." + "\n" + "|" + text + "|'s" + " element #" + (index + 1) + " needs to be '}'!!!");
                                 break;
+                            case '[':
+                                break;
+                            default:
+                                System.err.println("Error: there is no opened '['...");
                         }
                         break;
                     case '}':
                         switch (pop) {
                             case '[':
-                                System.err.println("Error: opened [ but closed } in index " + index + " element");
+                                System.err.println("Error: opened '[' but closed '}'..." + "\n" + "|" + text + "|'s" + " element #" + (index + 1) + " needs to be ']'!!!");
                                 break;
                             case '(':
-                                System.err.println("Error: opened ( but closed } in index " + index + " element");
+                                System.err.println("Error: opened '(' but closed '}'..." + "\n" + "|" + text + "|'s" + " element #" + (index + 1) + " needs to be ')'!!!");
                                 break;
+                            case '{':
+                                break;
+                            default:
+                                System.err.println("Error: there is no opened '{'...");
                         }
+                        break;
+                    default:
                         break;
                 }
             }
