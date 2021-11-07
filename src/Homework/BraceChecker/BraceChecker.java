@@ -33,23 +33,23 @@ public class BraceChecker {
                 switch (c) {
                     case ')':
                         if (pop == '[') {
-                            System.err.println("Error: opened [ but closed ) in index " + (index) + " element");
+                            System.err.println("Error: opened [ but closed ) in index " + index + " element");
                         }
                         if (pop == '{')
-                            System.err.println("Error: opened { but closed ) in index " + (index) + " element");
+                            System.err.println("Error: opened { but closed ) in index " + index + " element");
                     case ']':
                         if (pop == '(') {
-                            System.err.println("Error: opened ( but closed ] in index " + (index) + " element");
+                            System.err.println("Error: opened ( but closed ] in index " + index + " element");
                         }
                         if (pop == '{') {
-                            System.err.println("Error: opened { but closed ] in index " + (index) + " element");
+                            System.err.println("Error: opened { but closed ] in index " + index + " element");
                         }
                     case '}':
                         if (pop == '[') {
-                            System.err.println("Error: opened [ but closed } in index " + (index) + " element");
+                            System.err.println("Error: opened [ but closed } in index " + index + " element");
                         }
                         if (pop == '(') {
-                            System.err.println("Error: opened ( but closed } in index " + (index) + " element");
+                            System.err.println("Error: opened ( but closed } in index " + index + " element");
                         }
                 }
             }
