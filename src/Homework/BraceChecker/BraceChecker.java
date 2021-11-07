@@ -37,7 +37,7 @@ public class BraceChecker {
                             case '(':
                                 break;
                             default:
-                                System.err.println("Error: there is no opened '(' in text |" + text + "|");
+                                System.err.println("Error: there is no opened '(' in |" + text + "|");
                         }
                         break;
                     case ']':
@@ -51,7 +51,7 @@ public class BraceChecker {
                             case '[':
                                 break;
                             default:
-                                System.err.println("Error: there is no opened '[' in text |" + text + "|");
+                                System.err.println("Error: there is no opened '[' in |" + text + "|");
                         }
                         break;
                     case '}':
@@ -65,7 +65,7 @@ public class BraceChecker {
                             case '{':
                                 break;
                             default:
-                                System.err.println("Error: there is no opened '{' in text |" + text + "|");
+                                System.err.println("Error: there is no opened '{' in |" + text + "|");
                         }
                         break;
                     default:
