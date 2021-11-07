@@ -22,7 +22,6 @@ public class BraceChecker {
 // հետ , թե վերևի text-ի
     public void check() {
         Stack stack = new Stack();
-        char[] chars = text.toCharArray();
         for (int i = 0; i < text.length(); i++) {
             c = text.charAt(i);
             ++index;
@@ -55,5 +54,4 @@ public class BraceChecker {
             }
         }
     }
-
 }
