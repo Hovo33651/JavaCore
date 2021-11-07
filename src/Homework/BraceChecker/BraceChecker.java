@@ -1,11 +1,7 @@
 package Homework.BraceChecker;
 
-
-import javafx.scene.effect.BlendBuilder;
-
-import java.util.*;
-
 public class BraceChecker {
+
     //սա հենց տեքստն է
     private String text;
 
