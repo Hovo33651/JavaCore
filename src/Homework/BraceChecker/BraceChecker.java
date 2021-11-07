@@ -27,24 +27,25 @@ public class BraceChecker {
                 char pop = stack.pop();
                 switch (c) {
                     case ')':
-                        if (pop == '[') {
-                            System.err.println("Error: opened [ but closed ) in index " + index + " element");
+                        switch (pop) {
+                            case '[':
+                                System.err.println("Error: opened [ but closed ) in index " + index + " element");
+                            case '{':
+                                System.err.println("Error: opened { but closed ) in index " + index + " element");
                         }
-                        if (pop == '{')
-                            System.err.println("Error: opened { but closed ) in index " + index + " element");
                     case ']':
-                        if (pop == '(') {
-                            System.err.println("Error: opened ( but closed ] in index " + index + " element");
-                        }
-                        if (pop == '{') {
-                            System.err.println("Error: opened { but closed ] in index " + index + " element");
+                        switch (pop) {
+                            case '(':
+                                System.err.println("Error: opened ( but closed ] in index " + index + " element");
+                            case '{':
+                                System.err.println("Error: opened { but closed ] in index " + index + " element");
                         }
                     case '}':
-                        if (pop == '[') {
-                            System.err.println("Error: opened [ but closed } in index " + index + " element");
-                        }
-                        if (pop == '(') {
-                            System.err.println("Error: opened ( but closed } in index " + index + " element");
+                        switch (pop) {
+                            case '[':
+                                System.err.println("Error: opened [ but closed } in index " + index + " element");
+                            case '(':
+                                System.err.println("Error: opened ( but closed } in index " + index + " element");
                         }
                 }
             }
