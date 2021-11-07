@@ -8,8 +8,6 @@ import java.util.*;
 public class BraceChecker {
     //սա հենց տեքստն է
     private String text;
-    char c;
-    int index = -1;
 
     //կլասի կոնստրուկտերն է, որը պետք է ընդունի String տիպի տեքստ և վերագրիվերևի տեքստին
     //որ չկարողանանք breacjchecker-ի օբյեկտ սարքենք առանց text-
@@ -21,6 +19,8 @@ public class BraceChecker {
     //Սա հիմնական մեթոդն է, որի մեջ գրելու ենք ամբողջ լոգիկան, աշխատելու ենք թե stack-ի
 // հետ , թե վերևի text-ի
     public void check() {
+        int index = -1;
+        char c;
         Stack stack = new Stack();
         for (int i = 0; i < text.length(); i++) {
             c = text.charAt(i);
