@@ -22,6 +22,7 @@ public class AuthorStorage {
     Author getByIndex(int index) {
         if (index > authorArray.length - 1 || index < 0) {
             System.out.println("Invalid index");
+            return null;
         }
         return authorArray[index];
     }

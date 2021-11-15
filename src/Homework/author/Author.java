@@ -23,8 +23,8 @@ public class Author {
         return name;
     }
 
-    public void setName(String name1) {
-        name = name1;
+    public void setName(String name) {
+        this.name = name;
 
     }
 
@@ -32,16 +32,16 @@ public class Author {
         return surname;
     }
 
-    public void setSurname(String surname1) {
-        surname = surname1;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email1) {
-        email = email1;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAge() {
@@ -58,8 +58,8 @@ public class Author {
         return gender;
     }
 
-    public void setGender(String gender1) {
-        gender = gender1;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
 

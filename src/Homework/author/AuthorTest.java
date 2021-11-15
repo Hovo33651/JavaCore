@@ -36,7 +36,9 @@ public class AuthorTest {
 
             authorStorage.add(author);
         }
-        authorStorage.print();
+        System.out.println("index");
+        int index = sc.nextInt();
+        System.out.println(authorStorage.getByIndex(index));
 
     }
 }
