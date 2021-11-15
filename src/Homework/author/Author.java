@@ -48,8 +48,10 @@ public class Author {
         return age;
     }
 
-    public void setAge(int age1) {
-        age = age1;
+    public void setAge(int value) {
+        if (value <= 0)
+            age = 1;
+        age = value;
     }
 
     public String getGender() {
