@@ -1,22 +1,22 @@
 package Homework.author;
 
 public class Author {
-    private static String name;
-    private static String surname;
-    private static String email;
-    private static int age;
-    private static String gender;
+    private String name;
+    private String surname;
+    private String email;
+    private int age;
+    private String gender;
 
     Author() {
     }
 
-    Author(String name1, String surname1,
-           String email1, int age1, String gender1) {
-        age = age1;
-        name = name1;
-        surname = surname1;
-        email = email1;
-        gender = gender1;
+    Author(String name, String surname,
+           String email, int age, String gender) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.age = age;
+        this.gender = gender;
     }
 
     public String getName() {
