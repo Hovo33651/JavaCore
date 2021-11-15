@@ -28,7 +28,7 @@ public class AuthorStorage {
 
     public void print() {
         for (int i = 0; i < size; i++) {
-            System.out.println(authorArray[i] + " ");
+            System.out.println(authorArray[i]);
 
         }
     }
