@@ -9,7 +9,7 @@ public class AuthorTest {
 
         AuthorStorage authorStorage = new AuthorStorage();
 
-        System.out.println("How many people would you like do add");
+        System.out.println("How many authors would you like do add");
         int j = sc.nextInt();
         for (int i = 0; i < j; i++) {
             System.out.println("name");
