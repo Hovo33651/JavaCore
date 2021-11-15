@@ -1,4 +1,4 @@
-package author;
+package Homework.author;
 
 public class Author {
     private static String name;
@@ -19,55 +19,52 @@ public class Author {
         gender = gender1;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
-    public static void setName(String name1) {
+    public void setName(String name1) {
         name = name1;
 
     }
 
-    public static String getSurname() {
+    public String getSurname() {
         return surname;
     }
 
-    public static void setSurname(String surname1) {
+    public void setSurname(String surname1) {
         surname = surname1;
     }
 
-    public static String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public static void setEmail(String email1) {
+    public void setEmail(String email1) {
         email = email1;
     }
 
-    public static int getAge() {
+    public int getAge() {
         return age;
     }
 
-    public static void setAge(int age1) {
+    public void setAge(int age1) {
         age = age1;
     }
 
-    public static String getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public static void setGender(String gender1) {
+    public void setGender(String gender1) {
         gender = gender1;
     }
 
+
     @Override
     public String toString() {
-        return "Author{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                '}';
+        return "Name Surname \n" + name + " " + surname + "\nage\n" + age + "\nemail\n" + email + "\ngender\n" + gender;
     }
 }
+
+

@@ -1,4 +1,4 @@
-package author;
+package Homework.author;
 
 public class AuthorStorage {
 
