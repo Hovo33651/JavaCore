@@ -112,7 +112,6 @@ public class AuthorTest {
             String gender = scanner.nextLine();
             authorStorage.getByEmail(email).setGender(gender);
         } else {
-            System.out.println("Invalid email");
             changeAuthor();
         }
     }

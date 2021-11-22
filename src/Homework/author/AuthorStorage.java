@@ -52,6 +52,7 @@ public class AuthorStorage {
                 return authors[i];
             }
         }
+        System.out.println("Invalid email");
         return null;
     }
 
