@@ -29,12 +29,13 @@ public class BookStorage {
         }
     }
 
-    public void searchByTitle(String keyword) {
+    public Book searchByTitle(String keyword) {
         for (int i = 0; i < size; i++) {
             if (books[i].getTitle().contains(keyword)) {
-                System.out.println(books[i]);
+                return books[i];
             }
         }
+        return null;
     }
 
     public void searchByAuthor(String email) {
@@ -53,20 +54,5 @@ public class BookStorage {
             }
         }
         System.out.println("This author has " + count + " books.");
-    }
-
-    public void changeAuthor(String title) {
-        for (int i = 0; i < size; i++) {
-            if (books[i].getTitle().contains(title)) {
-                System.out.println("Please input new author's email");
-                String newEmail = scanner.nextLine();
-                for (int j = 0; j < size; j++) {
-                    if (books[j].getAuthor().getEmail().equals(newEmail)) {
-                        books[i].setAuthor(books[j].getAuthor());
-                        System.out.println("Thank you, book's author has been changed");
-                    }
-                }
-            }
-        }
     }
 }

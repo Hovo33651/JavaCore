@@ -70,20 +70,51 @@ public class AuthorTest {
                 default:
                     System.out.println("Invalid command!");
             }
-
         }
     }
 
     private static void changeBookAuthor() {
-        System.out.println("Please input the name of the book");
+        System.out.println("Please input the title of the book");
         String title = scanner.nextLine();
-        bookStorage.changeAuthor(title);
+        Book book = bookStorage.searchByTitle(title);
+        if (book != null) {
+            System.out.println("Please input new authors email");
+            String newEmail = scanner.nextLine();
+            Author author = authorStorage.getByEmail(newEmail);
+            if (author != null) {
+                book.setAuthor(author);
+                System.out.println("The author has been changed");
+            } else {
+                System.out.println("Invalid email");
+                changeBookAuthor();
+            }
+        } else {
+            System.out.println("Invalid title");
+            changeBookAuthor();
+        }
     }
 
     private static void changeAuthor() {
         System.out.println("Please input author's email");
         String email = scanner.nextLine();
-        authorStorage.changeAuthor(email);
+        Author author = authorStorage.getByEmail(email);
+        if (author != null) {
+            System.out.println("Please input new name");
+            String name = scanner.nextLine();
+            authorStorage.getByEmail(email).setName(name);
+            System.out.println("Please input new surname");
+            String surname = scanner.nextLine();
+            authorStorage.getByEmail(email).setSurname(surname);
+            System.out.println("Please input new age");
+            int age = Integer.parseInt(scanner.nextLine());
+            authorStorage.getByEmail(email).setAge(age);
+            System.out.println("Please input new gender");
+            String gender = scanner.nextLine();
+            authorStorage.getByEmail(email).setGender(gender);
+        } else {
+            System.out.println("Invalid email");
+            changeAuthor();
+        }
     }
 
     private static void countBooksByAuthor() {
@@ -149,29 +180,29 @@ public class AuthorTest {
         System.out.println("please input " + SEARCH_AUTHORS_BY_AGE + " for search author by age");
         System.out.println("please input " + SEARCH_BOOKS_BY_TITLE + " for search book by title");
         System.out.println("please input " + PRINT_AUTHORS + " for print authors");
-        System.out.println("please input " + PRINT_BOOKS + " for print books" );
+        System.out.println("please input " + PRINT_BOOKS + " for print books");
         System.out.println("please input " + SEARCH_BOOK_BY_AUTHOR + " for search book by author");
         System.out.println("please input " + COUNT_BOOKS_BY_AUTHOR + " for count author's books");
-        System.out.println("please input " + CHANGE_AUTHOR + " to change author " );
+        System.out.println("please input " + CHANGE_AUTHOR + " to change author ");
         System.out.println("please input " + CHANGE_BOOK_AUTHOR + " to change the author of book" + "\u001B[0m");
     }
 
     private static void searchByName() {
-        System.out.println("please input keyword");
+        System.out.println("Please input keyword");
         String keyword = scanner.nextLine();
         authorStorage.searchByName(keyword);
     }
 
     private static void addAuthor() {
-        System.out.println("please input author's name");
+        System.out.println("Please input author's name");
         String name = scanner.nextLine();
-        System.out.println("please input author's surname");
+        System.out.println("Please input author's surname");
         String surname = scanner.nextLine();
-        System.out.println("please input author's email");
+        System.out.println("Please input author's email");
         String email = scanner.nextLine();
-        System.out.println("please input author's gender");
+        System.out.println("Please input author's gender");
         String gender = scanner.nextLine();
-        System.out.println("please input author's age");
+        System.out.println("Please input author's age");
         int age = Integer.parseInt(scanner.nextLine());
 
         Author author = new Author(name, surname, age, email, gender);

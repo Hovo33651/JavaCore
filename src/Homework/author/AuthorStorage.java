@@ -1,9 +1,11 @@
 package Homework.author;
-import java.util.Scanner;
+
+
+import Chapter8.A;
 
 public class AuthorStorage {
 
-    Scanner scanner = new Scanner(System.in);
+
     private Author[] authors = new Author[16];
     private int size;
 
@@ -53,30 +55,5 @@ public class AuthorStorage {
         return null;
     }
 
-    public void changeAuthor(String email) {
-        for (int i = 0; i < size; i++) {
-            if(authors[i].getEmail().equals(email)){
-                System.out.println("Please input author's name");
-                String name = scanner.nextLine();
-                authors[i].setName(name);
-                System.out.println("Please input author's surname");
-                String surname = scanner.nextLine();
-                authors[i].setSurname(surname);
-                System.out.println("Please input author's age");
-                int age = Integer.parseInt(scanner.nextLine());
-                authors[i].setAge(age);
-                System.out.println("Please input author's gender");
-                String gender = scanner.nextLine();
-                authors[i].setGender(gender);
-                System.out.println("Author has been changed");
-                break;
-            }else{
-                System.err.println("Invalid email");
-                break;
-            }
-        }
-
-
-
-    }
 }
+
