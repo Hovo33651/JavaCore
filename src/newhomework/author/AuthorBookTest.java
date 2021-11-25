@@ -62,8 +62,13 @@ public class AuthorBookTest {
             author = new Author(nameSurname, book);
             authorStorage.add(author);
         } else {
-            System.out.println("Author doesn't exist. Please, add a new author ");
-            addAuthor();
+            System.out.println("Please add author's book title");
+            String title = scanner.nextLine();
+            System.out.println("Please input the price of the book");
+            double price = Integer.parseInt(scanner.nextLine());
+            Book book = new Book(title, price);
+            Author newAuthor = new Author(nameSurname, book);
+            authorStorage.add(newAuthor);
         }
 
     }
