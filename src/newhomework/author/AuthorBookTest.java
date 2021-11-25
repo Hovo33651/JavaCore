@@ -13,6 +13,7 @@ public class AuthorBookTest {
     private static final String ADD_BOOK = "1";
     private static final String PRINT_BOOKS = "2";
     private static final String PRINT_BOOKS_BY_AUTHOR = "3";
+    private static final String CHANGE_AUTHOR = "4";
 
 
     public static void main(String[] args) {
@@ -34,6 +35,9 @@ public class AuthorBookTest {
                 case PRINT_BOOKS_BY_AUTHOR:
                     printBooksByAuthor();
                     break;
+                case CHANGE_AUTHOR:
+                    changeAuthor();
+                    break;
                 default:
                     System.out.println("Invalid command");
                     break;
@@ -44,6 +48,21 @@ public class AuthorBookTest {
 
 
     }
+
+    private static void changeAuthor() {
+        System.out.println("Please input book title");
+        String title = scanner.nextLine();
+        Author author = authorStorage.getByTitle(title);
+        if (author != null) {
+            System.out.println("Write new name");
+            String newName = scanner.nextLine();
+            author.setNameSurname(newName);
+            System.out.println("Author's name has been changed");
+
+        }
+    }
+
+
 
     private static void addBook() {
         System.out.println("Please input author's name and surname");
@@ -86,7 +105,8 @@ public class AuthorBookTest {
         System.out.println("Press " + EXIT + " to exit the program");
         System.out.println("Press " + ADD_BOOK + " to add a book");
         System.out.println("Press " + PRINT_BOOKS + " to print books");
-        System.out.println("Press " + PRINT_BOOKS_BY_AUTHOR + " to print books");
+        System.out.println("Press " + PRINT_BOOKS_BY_AUTHOR + " to print books by author");
+        System.out.println("Press " + CHANGE_AUTHOR + " to change author of book");
 
     }
 

@@ -9,6 +9,9 @@ public class Author {
     Author(){
 
     }
+    Author(Book...books){
+        this.books = books;
+    }
 
     Author(String nameSurname, Book...books){
         this.nameSurname = nameSurname;

@@ -30,6 +30,14 @@ public class AuthorStorage {
         }
     }
 
+    public Author getByTitle(String title){
+        for (int i = 0; i < size; i++) {
+            if(Arrays.toString(authors[i].getBooks()).contains(title)){
+                return authors[i];
+            }
+        }return null;
+    }
+
     public Author getByNameSurname(String nameSurname){
         for (int i = 0; i < size; i++) {
             if(authors[i].getNameSurname().contains(nameSurname))
@@ -37,6 +45,7 @@ public class AuthorStorage {
         }
         return null;
     }
+
 
     public void print() {
         for (int i = 0; i < size; i++) {
