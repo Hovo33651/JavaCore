@@ -50,26 +50,23 @@ public class AuthorBookTest {
     }
 
     private static void addBook() {
-        System.out.println("Please input book title");
-        String title = scanner.nextLine();
-        System.out.println("Please input book price");
-        double price = Integer.parseInt(scanner.nextLine());
-        Book book = new Book(title, price);
         System.out.println("Please input author's name and surname");
         String nameSurname = scanner.nextLine();
         Author author = authorStorage.getByNameSurname(nameSurname);
-        if(author != null){
-           author = new Author(nameSurname,book);
-           authorStorage.add(author);
-        }
-        else{
+        if (author != null) {
+            System.out.println("Please input book title");
+            String title = scanner.nextLine();
+            System.out.println("Please input book price");
+            double price = Integer.parseInt(scanner.nextLine());
+            Book book = new Book(title, price);
+            author = new Author(nameSurname, book);
+            authorStorage.add(author);
+        } else {
             System.out.println("Author doesn't exist. Please, add a new author ");
             addAuthor();
-
-
         }
 
-        }
+    }
 
 
     private static void printBooksByAuthor() {
@@ -83,7 +80,7 @@ public class AuthorBookTest {
         authorStorage.print();
     }
 
-    private static Author addAuthor() {
+    private static void addAuthor() {
         System.out.println("Please input author's name and surname");
         String nameSurname = scanner.nextLine();
         System.out.println("Please add author's book title");
@@ -93,7 +90,6 @@ public class AuthorBookTest {
         Book book = new Book(title, price);
         Author author = new Author(nameSurname, book);
         authorStorage.add(author);
-        return author;
     }
 
     private static void printCommands() {
