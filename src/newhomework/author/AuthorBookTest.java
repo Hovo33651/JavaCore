@@ -81,17 +81,6 @@ public class AuthorBookTest {
         authorStorage.print();
     }
 
-    private static void addAuthor() {
-        System.out.println("Please input author's name and surname");
-        String nameSurname = scanner.nextLine();
-        System.out.println("Please add author's book title");
-        String title = scanner.nextLine();
-        System.out.println("Please input the price of the book");
-        double price = Integer.parseInt(scanner.nextLine());
-        Book book = new Book(title, price);
-        Author author = new Author(nameSurname, book);
-        authorStorage.add(author);
-    }
 
     private static void printCommands() {
         System.out.println("Press " + EXIT + " to exit the program");
