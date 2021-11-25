@@ -10,10 +10,9 @@ public class AuthorBookTest {
     static AuthorStorage authorStorage = new AuthorStorage();
 
     private static final String EXIT = "0";
-    private static final String ADD_AUTHOR = "1";
-    private static final String ADD_BOOK = "2";
-    private static final String PRINT_BOOKS = "3";
-    private static final String PRINT_BOOKS_BY_AUTHOR = "4";
+    private static final String ADD_BOOK = "1";
+    private static final String PRINT_BOOKS = "2";
+    private static final String PRINT_BOOKS_BY_AUTHOR = "3";
 
 
     public static void main(String[] args) {
@@ -25,9 +24,6 @@ public class AuthorBookTest {
             switch (command) {
                 case EXIT:
                     isRun = false;
-                    break;
-                case ADD_AUTHOR:
-                    addAuthor();
                     break;
                 case ADD_BOOK:
                     addBook();
@@ -99,7 +95,6 @@ public class AuthorBookTest {
 
     private static void printCommands() {
         System.out.println("Press " + EXIT + " to exit the program");
-        System.out.println("Press " + ADD_AUTHOR + " to add an author");
         System.out.println("Press " + ADD_BOOK + " to add a book");
         System.out.println("Press " + PRINT_BOOKS + " to print books");
         System.out.println("Press " + PRINT_BOOKS_BY_AUTHOR + " to print books");

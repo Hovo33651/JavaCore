@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Author {
     private String nameSurname;
-    private String surname;
     private Book[] books;
 
     Author(){
@@ -35,10 +34,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" +
-                "nameSurname='" + nameSurname + '\'' +
-                ", surname='" + surname + '\'' +
-                ", books=" + Arrays.toString(books) +
-                '}';
+        return  nameSurname + '\'' +
+                 Arrays.toString(books);
     }
 }
