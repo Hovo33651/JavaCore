@@ -80,7 +80,7 @@ public class AuthorBookTest {
     }
 
     private static void printBooks() {
-        authorStorage.seachByAuthor();
+        authorStorage.print();
     }
 
     private static Author addAuthor() {
