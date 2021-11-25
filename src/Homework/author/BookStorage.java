@@ -1,12 +1,11 @@
 package Homework.author;
 
-import java.util.Scanner;
+
 
 import Homework.author.Author;
 
 public class BookStorage {
 
-    Scanner scanner = new Scanner(System.in);
     private Book[] books = new Book[10];
     private int size = 0;
 
@@ -51,8 +50,43 @@ public class BookStorage {
         for (int i = 0; i < size; i++) {
             if (books[i].getAuthor().getEmail().equals(email)) {
                 count++;
+                System.out.print(books[i].getAuthor().getName());
             }
         }
-        System.out.println("This author has " + count + " books.");
+        System.out.println(" has " + count + " books.");
+    }
+
+
+    public void deleteBook(String title) {
+        for (int i = 0; i < size; i++) {
+            if (books[i].getTitle().contains(title)) {
+                deleteByIndex(i);
+                System.out.println("The book has been deleted");
+                break;
+            } else {
+                System.out.println("Invalid title");
+            }
+        }
+    }
+
+
+    private void deleteByIndex(int index) {
+        for (int i = index + 1; i < size; i++) {
+            books[i - 1] = books[i];
+
+        }
+        size--;
+    }
+
+    public void deleteBookByAuthor(String email) {
+        for (int i = 0; i < books.length; i++) {
+            if (books[i] != null && books[i].getAuthor().getEmail().equals(email)) {
+                deleteByIndex(i);
+            }
+        }
     }
 }
+
+
+    
+

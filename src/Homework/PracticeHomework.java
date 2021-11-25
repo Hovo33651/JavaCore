@@ -15,6 +15,7 @@ public class PracticeHomework {
     }
 
     boolean equals = true;
+
     boolean isSameNum(int a, int b) {
         if (a != b) {
             equals = false;
@@ -22,12 +23,13 @@ public class PracticeHomework {
         return equals;
     }
 
-    boolean num = true;
+
     boolean lessThanOrEqualsToZero(int number) {
         if (number > 0) {
-            num = false;
+            return false;
+        }else{
+            return true;
         }
-        return num;
     }
 
     boolean reverseBool(boolean value) {

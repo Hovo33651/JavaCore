@@ -17,9 +17,9 @@ public class ScannerExample {
             int a = scanner.nextInt();
             System.out.println("Please, input your second number");
             int b = scanner.nextInt();
-
-
             System.out.println("Please, input the operation: + - / *");
+
+
             String c = scanner.next();
             switch (c) {
                 case "+":
@@ -38,21 +38,21 @@ public class ScannerExample {
                     System.out.println("Invalid input");
             }
             loop1:
-            for (int j = 0; j < j + 1; j++) {
+            for (int k = 0; k < k + 1; k++) {
                 char choice;
-                    System.out.println("Press # to finish ");
-                    System.out.println("Press any key to start again");
-                    choice = (char) System.in.read();
+                System.out.println("Press # to finish ");
+                System.out.println("Press any key to start again");
+                choice = (char) System.in.read();
 
-                    System.out.println();
+                System.out.println();
 
-                    if (choice == '#') {
-                        System.out.println("Good Bye!!!");
-                        return;
-                    }else{
-                            break loop1;
-                    }
+                if (choice == '#') {
+                    System.out.println("Good Bye!!!");
+                    return;
+                } else {
+                    break loop1;
                 }
             }
         }
     }
+}

@@ -21,6 +21,8 @@ public class PracticeHomeworkTest {
         int maxLength = test.maxLength(new int[25], new int[20]);
         System.out.println(maxLength);
 
+        }
+
 
     }
-}
+

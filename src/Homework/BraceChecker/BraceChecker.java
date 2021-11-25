@@ -22,7 +22,7 @@ public class BraceChecker {
             c = text.charAt(i);
             ++index;
             if (c == '(' || c == '{' || c == '[') {
-                Stack.push(c);
+                stack.push(c);
             } else if (c == ')' || c == ']' || c == '}') {
                 char pop = stack.pop();
                 switch (c) {
@@ -65,12 +65,49 @@ public class BraceChecker {
                             case '{':
                                 break;
                             default:
-                                System.err.println("Error: there is no opened '{' in |" + text + "|");
+                                System.err.println("Error: there is '}' in " + (index + 1) + " element of |" + text + "|, but there is no '{' ");
                         }
                         break;
                     default:
                         break;
                 }
+            } else {
+            }
+        }
+
+    }
+
+    public void check1() {
+        Stack stack = new Stack();
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            int pop;
+            switch (c) {
+                case '(':
+                case '{':
+                case '[':
+                    stack.push(c);
+                    break;
+                case ')':
+                    pop = stack.pop();
+                    if (pop != '(') {
+                        System.err.println("Error: Closed " + c + "but opened " + (char) pop + " at " + i);
+                        break;
+                    }
+                case '}':
+                    pop = stack.pop();
+                    if (pop != '{') {
+                        System.err.println("Error: Closed " + c + "but opened " + (char) pop + " at " + i);
+                        break;
+                    }
+                case ']':
+                    pop = stack.pop();
+                    if (pop != '[') {
+                        System.err.println("Error: Closed " + c + " but opened " + (char) pop + " at " + i);
+                        break;
+
+                    }
+
             }
         }
     }

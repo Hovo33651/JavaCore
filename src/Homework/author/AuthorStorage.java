@@ -56,5 +56,20 @@ public class AuthorStorage {
         return null;
     }
 
+    public void deleteAuthor(String email) {
+        for (int i = 0; i < size; i++) {
+            if (authors[i].getEmail().equals(email)) {
+                deleteByindex(i);
+                System.out.println("Author has been deleted");
+            }
+        }
+    }
+
+    private void deleteByindex(int index) {
+        for (int i = index + 1; i < size; i++) {
+            authors[i-1] = authors[i];
+        }
+        size--;
+    }
 }
 
