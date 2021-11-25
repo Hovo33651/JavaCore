@@ -39,7 +39,7 @@ public class AuthorBookTest {
                     changeAuthor();
                     break;
                 default:
-                    System.out.println("Invalid command");
+                    System.err.println("INVALID COMMAND");
                     break;
             }
 
@@ -50,14 +50,14 @@ public class AuthorBookTest {
     }
 
     private static void changeAuthor() {
-        System.out.println("Please input book title");
+        System.out.println("\u001B[34m" + "PLEASE INPUT THE TITLE OF THE BOOK" + "\u001B[34m");
         String title = scanner.nextLine();
         Author author = authorStorage.getByTitle(title);
         if (author != null) {
-            System.out.println("Write new name");
+            System.out.println("\u001B[34m" + "WRITE A NEW NAME" + "\u001B[34m");
             String newName = scanner.nextLine();
             author.setNameSurname(newName);
-            System.out.println("Author's name has been changed");
+            System.out.println("\u001B[34m" + "AUTHOR'S NAME HAS BEEN CHANGED" + "\u001B[34m");
 
         }
     }
@@ -65,21 +65,21 @@ public class AuthorBookTest {
 
 
     private static void addBook() {
-        System.out.println("Please input author's name and surname");
+        System.out.println("\u001B[34m" + "PLEASE INPUT AUTHOR'S NAME AND SURNAME" + "\u001B[34m");
         String nameSurname = scanner.nextLine();
         Author author = authorStorage.getByNameSurname(nameSurname);
         if (author != null) {
-            System.out.println("Please input book title");
+            System.out.println("\u001B[34m" + "PLEASE INPUT THE TITLE OF THE BOOK" + "\u001B[34m");
             String title = scanner.nextLine();
-            System.out.println("Please input book price");
+            System.out.println("\u001B[34m" + "PLEASE INPUT THE PRICE OF THE BOOK" + "\u001B[34m");
             double price = Integer.parseInt(scanner.nextLine());
             Book book = new Book(title, price);
             author = new Author(nameSurname, book);
             authorStorage.add(author);
         } else {
-            System.out.println("Please add author's book title");
+            System.out.println("\u001B[34m" + "PLEASE INPUT THE TITLE OF THE BOOK" + "\u001B[34m");
             String title = scanner.nextLine();
-            System.out.println("Please input the price of the book");
+            System.out.println("\u001B[34m" + "PLEASE INPUT THE PRICE OF THE BOOK" + "\u001B[34m");
             double price = Integer.parseInt(scanner.nextLine());
             Book book = new Book(title, price);
             Author newAuthor = new Author(nameSurname, book);
@@ -90,7 +90,7 @@ public class AuthorBookTest {
 
 
     private static void printBooksByAuthor() {
-        System.out.println("Please input author's name and surname");
+        System.out.println("\u001B[34m" + "PLEASE INPUT AUTHOR'S NAME AND SURNAME" + "\u001B[34m");
         String nameSurname = scanner.nextLine();
         authorStorage.searchByAuthor(nameSurname);
 
@@ -102,11 +102,11 @@ public class AuthorBookTest {
 
 
     private static void printCommands() {
-        System.out.println("Press " + EXIT + " to exit the program");
-        System.out.println("Press " + ADD_BOOK + " to add a book");
-        System.out.println("Press " + PRINT_BOOKS + " to print books");
-        System.out.println("Press " + PRINT_BOOKS_BY_AUTHOR + " to print books by author");
-        System.out.println("Press " + CHANGE_AUTHOR + " to change author of book");
+        System.out.println("\u001B[34m"+"PRESS " + EXIT + " TO EXIT THE PROGRAM");
+        System.out.println("PRESS " + ADD_BOOK + " TO ADD A BOOK");
+        System.out.println("PRESS " + PRINT_BOOKS + " TO PRINT ALL BOOKS");
+        System.out.println("PRESS " + PRINT_BOOKS_BY_AUTHOR + " TO PRINT YOUR FAVORITE AUTHOR'S BOOKS");
+        System.out.println("PRESS " + CHANGE_AUTHOR + " TO CHANGE THE AUTHOR OF BOOK"+"\u001B[34m");
 
     }
 

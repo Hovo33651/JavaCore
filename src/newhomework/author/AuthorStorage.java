@@ -25,7 +25,7 @@ public class AuthorStorage {
     public void searchByAuthor(String name) {
         for (int i = 0; i < size; i++) {
             if(authors[i].getNameSurname().contains(name)){
-                System.out.println(Arrays.toString(authors[i].getBooks()));
+                System.out.println("\u001B[35m"+Arrays.toString(authors[i].getBooks()) + "\u001B[35m");
             }
         }
     }
@@ -49,7 +49,7 @@ public class AuthorStorage {
 
     public void print() {
         for (int i = 0; i < size; i++) {
-            System.out.println(authors[i].getNameSurname() + " " + Arrays.toString(authors[i].getBooks()));
+            System.out.println("\u001B[35m"+authors[i].getNameSurname() + " " + Arrays.toString(authors[i].getBooks())+"\u001B[35m");
 
         }
     }

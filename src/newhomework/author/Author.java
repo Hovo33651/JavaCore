@@ -37,7 +37,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return  nameSurname + '\'' +
+        return  "Author: "+nameSurname + '\'' +
                  Arrays.toString(books);
     }
 }
