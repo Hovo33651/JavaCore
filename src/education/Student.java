@@ -11,8 +11,8 @@ public class Student {
     private String phoneNumber;
     private Lesson lesson;
 
-    Student(String name,String surname, int age,
-            String email, String phoneNumber,Lesson lesson){
+    Student(String name, String surname, int age,
+            String email, String phoneNumber, Lesson lesson) {
         this.name = name;
         this.surname = surname;
         this.age = age;

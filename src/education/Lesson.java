@@ -9,7 +9,7 @@ public class Lesson {
     private String lecturerName;
     private double price;
 
-    Lesson(String name, String duration, String lecturerName, double price){
+    Lesson(String name, String duration, String lecturerName, double price) {
         this.name = name;
         this.duration = duration;
         this.lecturerName = lecturerName;

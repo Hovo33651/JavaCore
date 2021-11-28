@@ -62,21 +62,20 @@ public class LessonStudentTest {
         System.out.println("PLEASE INPUT STUDENT'S EMAIL");
         String email = scanner.nextLine();
         Student student = studentStorage.getByEmail(email);
-        if(student != null){
+        if (student != null) {
             studentStorage.deleteByEmail(email);
             System.out.println("STUDENT HAS BEEN DELETED");
-        }
-        else System.out.println("STUDENT DOESN'T EXIST");
+        } else System.out.println("STUDENT DOESN'T EXIST");
     }
 
     private static void deleteLessonByName() {
         System.out.println("PLEASE INPUT THE NAME OF THE LESSON");
         String name = scanner.nextLine();
         Lesson lesson = lessonStorage.getByName(name);
-        if(lesson != null){
+        if (lesson != null) {
             lessonStorage.deleteByName(name);
             System.out.println("THE LESSON HAS BEEN DELETED");
-        }else{
+        } else {
             System.out.println("THE LESSON DOESN'T EXIST");
         }
     }
@@ -85,10 +84,9 @@ public class LessonStudentTest {
         System.out.println("PLEASE INPUT THE NAME OF THE LESSON");
         String name = scanner.nextLine();
         Lesson lesson = lessonStorage.getByName(name);
-        if(lesson != null){
+        if (lesson != null) {
             studentStorage.printByLesson(name);
-        }
-        else{
+        } else {
             System.out.println("THE LESSON DOESN'T EXIST");
         }
     }
@@ -107,11 +105,10 @@ public class LessonStudentTest {
         System.out.println("PLEASE, INPUT THE LESSON YOU WANT");
         String lessonName = scanner.nextLine();
         Lesson lesson = lessonStorage.getByName(lessonName);
-        if(lesson != null){
-            Student student = new Student(name, surname,age,email,phoneNumber,lesson);
+        if (lesson != null) {
+            Student student = new Student(name, surname, age, email, phoneNumber, lesson);
             studentStorage.add(student);
-        }
-        else{
+        } else {
             System.out.println("THE LESSON DOESN'T EXIST");
 
         }
@@ -132,8 +129,7 @@ public class LessonStudentTest {
             Lesson newLesson = new Lesson(name, duration, lecturerName, price);
             lessonStorage.add(newLesson);
             System.out.println("THANK YOU, THE LESSON IS ADDED");
-        }
-        else{
+        } else {
             System.out.println("THIS LESSON ALREADY EXISTS");
         }
     }
