@@ -1,8 +1,5 @@
 package education;
 
-import sun.font.FontRunIterator;
-
-import java.io.FileOutputStream;
 
 public class LessonStorage {
 
