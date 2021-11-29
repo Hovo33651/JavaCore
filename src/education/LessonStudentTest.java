@@ -1,7 +1,5 @@
 package education;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import jdk.internal.org.objectweb.asm.tree.MultiANewArrayInsnNode;
 
 import java.util.Scanner;
 
@@ -104,15 +102,20 @@ public class LessonStudentTest {
         String phoneNumber = scanner.nextLine();
         System.out.println("PLEASE, INPUT THE LESSON YOU WANT");
         String lessonName = scanner.nextLine();
-        Lesson lesson = lessonStorage.getByName(lessonName);
-        if (lesson != null) {
-            Student student = new Student(name, surname, age, email, phoneNumber, lesson);
-            studentStorage.add(student);
-        } else {
-            System.out.println("THE LESSON DOESN'T EXIST");
-
+        String[] lessonNames = lessonName.split(",");
+        Lesson[] lessons = new Lesson[lessonNames.length];
+        for (int i = 0; i < lessons.length; i++) {
+            if (lessonStorage.getByName(lessonNames[i]) != null) {
+                for (int j = 0; j < lessons.length; j++) {
+                        lessons[j] = lessonStorage.getByName(lessonNames[i]);
+                }
+            } else {
+                System.out.println("THE LESSON " + lessonNames[i] + " DOESN'T EXIST");
+            }
         }
-
+        Student student = new Student(name, surname, age, email, phoneNumber, lessons);
+        studentStorage.add(student);
+        System.out.println("THANK YOU, STUDENT IS ADDED");
     }
 
     private static void addLesson() {

@@ -1,9 +1,12 @@
 package education;
 
+import java.util.Arrays;
+
 public class StudentStorage {
 
     Student[] students = new Student[10];
     int size = 0;
+
 
     public void add(Student student) {
         if (size == students.length) {
@@ -26,7 +29,7 @@ public class StudentStorage {
 
     public void printByLesson(String name) {
         for (int i = 0; i < size; i++) {
-            if (students[i].getLesson().getName().equals(name)) {
+            if (Arrays.toString(students[i].getLesson()).contains(name)) {
                 System.out.println(students[i]);
             }
         }
