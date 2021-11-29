@@ -13,7 +13,7 @@ public class Student {
     private Lesson[] lessons;
 
     Student(String name, String surname, int age,
-            String email, String phoneNumber, Lesson[] lessons) {
+            String email, String phoneNumber, Lesson... lessons) {
         this.name = name;
         this.surname = surname;
         this.age = age;
