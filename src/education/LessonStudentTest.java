@@ -106,9 +106,7 @@ public class LessonStudentTest {
         Lesson[] lessons = new Lesson[lessonNames.length];
         for (int i = 0; i < lessons.length; i++) {
             if (lessonStorage.getByName(lessonNames[i]) != null) {
-                for (int j = 0; j < lessons.length; j++) {
-                        lessons[j] = lessonStorage.getByName(lessonNames[i]);
-                }
+                        lessons[i] = lessonStorage.getByName(lessonNames[i]);
             } else {
                 System.out.println("THE LESSON " + lessonNames[i] + " DOESN'T EXIST");
             }
