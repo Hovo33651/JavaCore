@@ -67,20 +67,19 @@ public class LessonStudentTest implements LessonStudentCommands {
         String password = scanner.nextLine();
         System.out.println("ADMIN OR USER");
         String type = scanner.nextLine();
+        if (type.equals("admin") || type.equals("user")) {
+            User user = new User(name, surname, email, password, type);
+            userStorage.add(user);
 
-        User user = new User(name, surname, email, password, type);
-        userStorage.add(user);
+            if (user.getType().equals("admin"))
+                adminMethods();
 
-        if (user.getType().equals("admin"))
-            adminMethods();
+            else if (user.getType().equals("user"))
+                userMethods();
 
-        else if (user.getType().equals("user"))
-            userMethods();
-
-        else
-            System.out.println("INVALID REGISTRATION");
-
-
+        }else{
+            System.out.println("WRONG TYPE!!! SHOULD BE ADMIN OR USER");
+        }
     }
 
     private static void adminMethods() throws ParseException {
