@@ -78,7 +78,7 @@ public class LessonStudentTest implements LessonStudentCommands {
                 userMethods();
 
         }else{
-            System.out.println("WRONG TYPE!!! SHOULD BE ADMIN OR USER");
+            System.out.println("WRONG TYPE! SHOULD BE ADMIN OR USER");
         }
     }
 
