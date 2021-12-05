@@ -1,4 +1,6 @@
-package education;
+package education.storages;
+
+import education.model.Student;
 
 import java.util.Arrays;
 
@@ -29,7 +31,7 @@ public class StudentStorage {
 
     public void printByLesson(String name) {
         for (int i = 0; i < size; i++) {
-            if (Arrays.toString(students[i].getLesson()).contains(name)) {
+            if (Arrays.toString(students[i].getLessons()).contains(name)) {
                 System.out.println(students[i]);
             }
         }
@@ -58,4 +60,5 @@ public class StudentStorage {
         }
         size--;
     }
+
 }

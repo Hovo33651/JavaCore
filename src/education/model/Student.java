@@ -1,30 +1,37 @@
-package education;
+package education.model;
+
+import education.util.DateUtil;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Objects;
 
 public class Student {
 
     private String name;
     private String surname;
-    private int age;
     private String email;
     private String phoneNumber;
     private Lesson[] lessons;
+    private Date birthday;
 
-    Student(String name, String surname, int age,
-            String email, String phoneNumber, Lesson... lessons) {
+    public Student(String name, String surname,
+                   String email, String phoneNumber, Lesson[] lessons, Date birthday) {
         this.name = name;
         this.surname = surname;
-        this.age = age;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.lessons = lessons;
-    }
-    Student(Lesson...lessons){
-        this.lessons = lessons;
+        this.birthday = birthday;
     }
 
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
     public String getName() {
         return name;
@@ -40,14 +47,6 @@ public class Student {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getEmail() {
@@ -66,12 +65,15 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public Lesson[] getLesson() {
+    public Lesson[] getLessons() {
         return lessons;
     }
 
-    public void setLesson(Lesson[] lessons) {
-        this.lessons = lessons;
+    public void setLessons(Lesson[] lessons) {
+        for (int i = 0; i < lessons.length; i++) {
+            if (lessons[i] != null)
+                this.lessons = lessons;
+        }
     }
 
     @Override
@@ -79,25 +81,26 @@ public class Student {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", age=" + age +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", lesson='" + Arrays.toString(lessons) + '\'' +
+                ", lessons=" + Arrays.toString(lessons) +
+                ", birthday=" + DateUtil.dateToString(birthday) +
                 '}';
     }
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return age == student.age && Objects.equals(name, student.name) && Objects.equals(surname, student.surname)
-                && Objects.equals(email, student.email) && Objects.equals(phoneNumber, student.phoneNumber) && Arrays.equals(lessons, student.lessons);
+        return Objects.equals(name, student.name) && Objects.equals(surname, student.surname) && Objects.equals(email, student.email) && Objects.equals(phoneNumber, student.phoneNumber) && Arrays.equals(lessons, student.lessons) && Objects.equals(birthday, student.birthday);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, age, email, phoneNumber, Arrays.hashCode(lessons));
+        int result = Objects.hash(name, surname, email, phoneNumber, birthday);
+        result = 31 * result + Arrays.hashCode(lessons);
+        return result;
     }
 }
+
