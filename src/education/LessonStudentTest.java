@@ -58,10 +58,8 @@ public class LessonStudentTest implements LessonStudentCommands, GeneralCommands
         if (user == null) {
             if (type.equals("admin") || type.equals("user")) {
                 User newUser = new User(name, surname, email, password, type);
-
                 userStorage.add(newUser);
 
-                System.out.println("PLEASE LOG IN");
                 logIn();
 
             } else {
@@ -143,7 +141,7 @@ public class LessonStudentTest implements LessonStudentCommands, GeneralCommands
     }
 
     private static void logIn() throws ParseException {
-        System.out.println("PLEASE ADD YOUR EMAIL");
+        System.out.println("PLEASE ADD YOUR EMAIL TO LOG IN");
         String email = scanner.nextLine();
         System.out.println("PLEASE ADD YOUR PASSWORD");
         String password = scanner.nextLine();
