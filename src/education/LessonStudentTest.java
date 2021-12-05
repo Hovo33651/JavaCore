@@ -1,5 +1,7 @@
 package education;
 
+import education.commands.GeneralCommands;
+import education.commands.LessonStudentCommands;
 import education.model.Lesson;
 import education.model.Student;
 import education.model.User;
@@ -12,7 +14,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
 
-public class LessonStudentTest implements LessonStudentCommands {
+public class LessonStudentTest implements LessonStudentCommands, GeneralCommands {
 
     static Scanner scanner = new Scanner(System.in);
     static StudentStorage studentStorage = new StudentStorage();
@@ -20,21 +22,10 @@ public class LessonStudentTest implements LessonStudentCommands {
     static boolean isRun = true;
     static UserStorage userStorage = new UserStorage();
 
-    static final String LOG_IN = "1";
-    static final String REGISTER = "2";
-    static final String QUIT = "0";
-
-    private static void commands() {
-        System.out.println("PRESS " + LOG_IN + " TO LOG IN");
-        System.out.println("PRESS " + REGISTER + " TO REGISTER");
-        System.out.println("PRESS " + QUIT + " TO EXIT");
-    }
-
-
     public static void main(String[] args) throws ParseException {
 
         while (isRun) {
-            commands();
+            GeneralCommands.commands();
             String command = scanner.nextLine();
             switch (command) {
                 case LOG_IN:

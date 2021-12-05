@@ -1,4 +1,4 @@
-package education;
+package education.commands;
 
 public interface LessonStudentCommands {
     String ADD_LESSON = "1";
