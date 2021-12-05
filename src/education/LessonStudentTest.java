@@ -48,12 +48,8 @@ public class LessonStudentTest implements LessonStudentCommands {
                     break;
                 default:
                     System.out.println("INVALID COMMAND");
-
             }
-
         }
-
-
     }
 
     private static void addUser() throws ParseException {
@@ -67,19 +63,21 @@ public class LessonStudentTest implements LessonStudentCommands {
         String password = scanner.nextLine();
         System.out.println("ADMIN OR USER");
         String type = scanner.nextLine();
-        if (type.equals("admin") || type.equals("user")) {
-            User user = new User(name, surname, email, password, type);
-            userStorage.add(user);
+        User user = userStorage.getByEmail(email);
+        if (user == null) {
+            if (type.equals("admin") || type.equals("user")) {
+                User newUser = new User(name, surname, email, password, type);
 
-            if (user.getType().equals("admin"))
-                adminMethods();
+                userStorage.add(newUser);
 
-            else if (user.getType().equals("user"))
-                userMethods();
+                System.out.println("PLEASE LOG IN");
+                logIn();
 
-        }else{
-            System.out.println("WRONG TYPE! SHOULD BE ADMIN OR USER");
-        }
+            } else {
+                System.out.println("WRONG TYPE! SHOULD BE ADMIN OR USER");
+            }
+        }else
+            System.out.println("USER WITH THIS EMAIL ALREADY EXISTS");
     }
 
     private static void adminMethods() throws ParseException {
@@ -88,9 +86,7 @@ public class LessonStudentTest implements LessonStudentCommands {
             String command = scanner.nextLine();
             switch (command) {
                 case EXIT:
-                    System.out.println("GOOD BYE!!!");
-                    isRun = false;
-                    break;
+                    return;
                 case ADD_LESSON:
                     addLesson();
                     break;
@@ -129,8 +125,7 @@ public class LessonStudentTest implements LessonStudentCommands {
             switch (command) {
                 case EXIT:
                     System.out.println("GOOD BYE!!!");
-                    isRun = false;
-                    break;
+                    return;
                 case ADD_LESSON:
                     addLesson();
                     break;
