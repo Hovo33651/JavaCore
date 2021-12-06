@@ -35,7 +35,7 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
                 case REGISTER:
                     addUser();
                     break;
-                case QUIT:
+                case EXIT:
                     isRun = false;
                     break;
                 default:
