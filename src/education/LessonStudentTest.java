@@ -33,7 +33,7 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
                     logIn();
                     break;
                 case REGISTER:
-                    addUser();
+                    register();
                     break;
                 case EXIT:
                     isRun = false;
@@ -45,7 +45,7 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
         }
     }
 
-    private static void addUser() throws ParseException {
+    private static void register() throws ParseException {
         System.out.println("PLEASE INPUT YOUR NAME");
         String name = scanner.nextLine();
         System.out.println("PLEASE INPUT YOUR SURNAME");
