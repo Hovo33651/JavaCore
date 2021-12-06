@@ -37,6 +37,7 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
                     break;
                 case EXIT:
                     isRun = false;
+                    System.out.println("GOOD BYE!!!");
                     break;
                 default:
                     System.out.println("INVALID COMMAND");
@@ -113,7 +114,6 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
             String command = scanner.nextLine();
             switch (command) {
                 case EXIT:
-                    System.out.println("GOOD BYE!!!");
                     return;
                 case ADD_LESSON:
                     addLesson();
