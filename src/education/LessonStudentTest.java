@@ -60,6 +60,7 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
             if (type.equals("admin") || type.equals("user")) {
                 User newUser = new User(name, surname, email, password, type);
                 userStorage.add(newUser);
+                System.out.println("THANK YOU, YOU ARE REGISTERED");
 
             } else {
                 System.out.println("WRONG TYPE! SHOULD BE ADMIN OR USER");
