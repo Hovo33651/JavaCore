@@ -10,6 +10,7 @@ public interface AdminCommands {
     String PRINT_LESSONS = "6";
     String DELETE_LESSON_BY_NAME = "7";
     String DELETE_STUDENT_BY_EMAIL = "8";
+    String DELETE_ACCOUNT = "9";
 
     static void printCommandsAdmin() {
         System.out.println("PRESS " + EXIT + " TO EXIT THE PROGRAM");
@@ -21,6 +22,7 @@ public interface AdminCommands {
         System.out.println("PRESS " + PRINT_LESSONS + " TO SEE ALL LESSONS");
         System.out.println("PRESS " + DELETE_LESSON_BY_NAME + " TO DELETE A LESSON");
         System.out.println("PRESS " + DELETE_STUDENT_BY_EMAIL + " TO DELETE A STUDENT");
+        System.out.println("PRESS " + DELETE_ACCOUNT + " TO DELETE AN ACCOUNT");
 
     }
 }

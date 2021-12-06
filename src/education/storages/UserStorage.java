@@ -27,4 +27,18 @@ public class UserStorage {
         }
         return null;
     }
+
+    public void deleteAdmin(String email) {
+        for (int i = 0; i < size; i++) {
+            if(users[i].getEmail().equals(email))
+                deleteByIndex(i);
+        }
+    }
+
+    private void deleteByIndex(int index) {
+        for (int i = index + 1; i < size; i++) {
+            users[i-1] =  users[i];
+        }
+        size--;
+    }
 }

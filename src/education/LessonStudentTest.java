@@ -1,7 +1,7 @@
 package education;
 
-import education.commands.GeneralCommands;
 import education.commands.AdminCommands;
+import education.commands.GeneralCommands;
 import education.commands.UserCommands;
 import education.model.Lesson;
 import education.model.Student;
@@ -17,11 +17,11 @@ import java.util.Scanner;
 
 public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCommands {
 
-    static Scanner scanner = new Scanner(System.in);
-    static StudentStorage studentStorage = new StudentStorage();
-    static LessonStorage lessonStorage = new LessonStorage();
-    static boolean isRun = true;
-    static UserStorage userStorage = new UserStorage();
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final StudentStorage studentStorage = new StudentStorage();
+    private static final LessonStorage lessonStorage = new LessonStorage();
+    private static final UserStorage userStorage = new UserStorage();
+    private static boolean isRun = true;
 
     public static void main(String[] args) throws ParseException {
 
@@ -45,7 +45,24 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
         }
     }
 
-    private static void register() throws ParseException {
+    private static void logIn() throws ParseException {
+        System.out.println("PLEASE INPUT YOUR EMAIL TO LOG IN");
+        String email = scanner.nextLine();
+        System.out.println("PLEASE INPUT YOUR PASSWORD");
+        String password = scanner.nextLine();
+        User user = userStorage.getByEmail(email);
+        if (user != null && user.getPassword().equals(password) && user.getType().equals("admin")) {
+            adminMethods();
+        } else if (user != null && user.getPassword().equals(password) && user.getType().equals("user")) {
+            userMethods();
+        } else if (user != null && !user.getPassword().equals(password)) {
+            System.out.println("INVALID PASSWORD!");
+        } else {
+            System.out.println("USER DOESN'T EXIST");
+        }
+    }
+
+    private static void register() {
         System.out.println("PLEASE INPUT YOUR NAME");
         String name = scanner.nextLine();
         System.out.println("PLEASE INPUT YOUR SURNAME");
@@ -62,7 +79,6 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
                 User newUser = new User(name, surname, email, password, type);
                 userStorage.add(newUser);
                 System.out.println("THANK YOU, YOU ARE REGISTERED");
-
             } else {
                 System.out.println("WRONG TYPE! SHOULD BE ADMIN OR USER");
             }
@@ -101,9 +117,11 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
                 case ADD_LESSON_BY_STUDENT:
                     addLessonByStudent();
                     break;
+                case DELETE_ACCOUNT:
+                    deleteUser();
+                    break;
                 default:
                     System.out.println("INVALID COMMAND");
-
             }
         }
     }
@@ -133,6 +151,9 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
                 case ADD_LESSON_BY_STUDENT:
                     addLessonByStudent();
                     break;
+                case DELETE_ACCOUNT:
+                    deleteUser();
+                    break;
                 default:
                     System.out.println("INVALID COMMAND");
 
@@ -140,23 +161,17 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
         }
     }
 
-    private static void logIn() throws ParseException {
-        System.out.println("PLEASE INPUT YOUR EMAIL TO LOG IN");
+    private static void deleteUser() {
+        System.out.println("PLEASE INPUT YOUR EMAIL");
         String email = scanner.nextLine();
-        System.out.println("PLEASE INPUT YOUR PASSWORD");
-        String password = scanner.nextLine();
         User user = userStorage.getByEmail(email);
-        if (user != null && user.getPassword().equals(password) && user.getType().equals("admin")) {
-            adminMethods();
-        } else if (user != null && user.getPassword().equals(password) && user.getType().equals("user")) {
-            userMethods();
-        } else if (user != null && !user.getPassword().equals(password)) {
-            System.out.println("INVALID PASSWORD!");
+        if (user != null) {
+            userStorage.deleteAdmin(email);
+            System.out.println("YOUR ACCOUNT HAS BEEN DELETED");
         } else {
-            System.out.println("USER DOESN'T EXIST");
+            System.out.println("ACCOUNT DOESN'T EXIST");
         }
     }
-
 
     private static void addLessonByStudent() {
         System.out.println("PLEASE, INPUT YOUR STUDENT'S EMAIL");

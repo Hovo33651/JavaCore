@@ -9,6 +9,7 @@ public interface UserCommands extends AdminCommands{
         System.out.println("PRESS " + PRINT_STUDENTS + " TO SEE ALL STUDENTS");
         System.out.println("PRESS " + PRINT_STUDENTS_BY_LESSON + " TO SEE STUDENTS BY LESSON");
         System.out.println("PRESS " + PRINT_LESSONS + " TO SEE ALL LESSONS");
+        System.out.println("PRESS " + DELETE_ACCOUNT + " TO DELETE AN ACCOUNT");
 
     }
 }
