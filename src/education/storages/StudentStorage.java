@@ -4,6 +4,8 @@ import education.model.Student;
 
 import java.util.Arrays;
 
+import education.model.Lesson;
+
 public class StudentStorage {
 
     Student[] students = new Student[10];
@@ -31,8 +33,10 @@ public class StudentStorage {
 
     public void printByLesson(String name) {
         for (int i = 0; i < size; i++) {
-            if (Arrays.toString(students[i].getLessons()).contains(name)) {
-                System.out.println(students[i]);
+            for (Lesson lesson1 : students[i].getLessons()) {
+                if (lesson1.getName().equals(name)) {
+                    System.out.println(students[i]);
+                }
             }
         }
     }

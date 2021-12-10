@@ -1,8 +1,7 @@
 package education;
 
-import education.commands.AdminCommands;
+import education.commands.AdminUserCommands;
 import education.commands.GeneralCommands;
-import education.commands.UserCommands;
 import education.model.Lesson;
 import education.model.Student;
 import education.model.User;
@@ -15,7 +14,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
 
-public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCommands {
+public class LessonStudentTest implements AdminUserCommands, GeneralCommands {
 
     private static final Scanner scanner = new Scanner(System.in);
     private static final StudentStorage studentStorage = new StudentStorage();
@@ -88,7 +87,7 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
 
     private static void adminMethods() throws ParseException {
         while (isRun) {
-            AdminCommands.printCommandsAdmin();
+            AdminUserCommands.printCommandsAdmin();
             String command = scanner.nextLine();
             switch (command) {
                 case EXIT:
@@ -128,7 +127,7 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
 
     private static void userMethods() throws ParseException {
         while (isRun) {
-            UserCommands.printCommandsAdmin();
+           AdminUserCommands.printCommandsUser();
             String command = scanner.nextLine();
             switch (command) {
                 case EXIT:
@@ -156,7 +155,6 @@ public class LessonStudentTest implements AdminCommands, GeneralCommands, UserCo
                     break;
                 default:
                     System.out.println("INVALID COMMAND");
-
             }
         }
     }

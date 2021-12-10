@@ -1,6 +1,6 @@
 package education.commands;
 
-public interface GeneralCommands extends AdminCommands {
+public interface GeneralCommands extends AdminUserCommands {
 
     String LOG_IN = "1";
     String REGISTER = "2";
