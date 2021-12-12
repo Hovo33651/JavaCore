@@ -2,6 +2,7 @@ package education;
 
 import education.commands.AdminUserCommands;
 import education.commands.GeneralCommands;
+import education.exeptions.UserNotFoundException;
 import education.model.Lesson;
 import education.model.Student;
 import education.model.User;
@@ -49,15 +50,17 @@ public class LessonStudentTest implements AdminUserCommands, GeneralCommands {
         String email = scanner.nextLine();
         System.out.println("PLEASE INPUT YOUR PASSWORD");
         String password = scanner.nextLine();
-        User user = userStorage.getByEmail(email);
-        if (user != null && user.getPassword().equals(password) && user.getType().equals("admin")) {
-            adminMethods();
-        } else if (user != null && user.getPassword().equals(password) && user.getType().equals("user")) {
-            userMethods();
-        } else if (user != null && !user.getPassword().equals(password)) {
-            System.out.println("INVALID PASSWORD!");
-        } else {
-            System.out.println("USER DOESN'T EXIST");
+        try {
+            User user = userStorage.getByEmail(email);
+            if (user.getPassword().equals(password) && user.getType().equals("admin")) {
+                adminMethods();
+            } else if (user.getPassword().equals(password) && user.getType().equals("user")) {
+                userMethods();
+            } else if (!user.getPassword().equals(password)) {
+                System.out.println("INVALID PASSWORD!");
+            }
+        } catch (UserNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -72,8 +75,10 @@ public class LessonStudentTest implements AdminUserCommands, GeneralCommands {
         String password = scanner.nextLine();
         System.out.println("ADMIN OR USER");
         String type = scanner.nextLine();
-        User user = userStorage.getByEmail(email);
-        if (user == null) {
+        try {
+            User user = userStorage.getByEmail(email);
+            System.out.println("USER WITH THIS EMAIL ALREADY EXISTS");
+        } catch (UserNotFoundException e) {
             if (type.equals("admin") || type.equals("user")) {
                 User newUser = new User(name, surname, email, password, type);
                 userStorage.add(newUser);
@@ -81,8 +86,7 @@ public class LessonStudentTest implements AdminUserCommands, GeneralCommands {
             } else {
                 System.out.println("WRONG TYPE! SHOULD BE ADMIN OR USER");
             }
-        } else
-            System.out.println("USER WITH THIS EMAIL ALREADY EXISTS");
+        }
     }
 
     private static void adminMethods() throws ParseException {
@@ -127,7 +131,7 @@ public class LessonStudentTest implements AdminUserCommands, GeneralCommands {
 
     private static void userMethods() throws ParseException {
         while (isRun) {
-           AdminUserCommands.printCommandsUser();
+            AdminUserCommands.printCommandsUser();
             String command = scanner.nextLine();
             switch (command) {
                 case EXIT:
@@ -162,12 +166,12 @@ public class LessonStudentTest implements AdminUserCommands, GeneralCommands {
     private static void deleteUser() {
         System.out.println("PLEASE INPUT YOUR EMAIL");
         String email = scanner.nextLine();
-        User user = userStorage.getByEmail(email);
-        if (user != null) {
+        try {
+            User user = userStorage.getByEmail(email);
             userStorage.deleteAdmin(email);
             System.out.println("YOUR ACCOUNT HAS BEEN DELETED");
-        } else {
-            System.out.println("ACCOUNT DOESN'T EXIST");
+        } catch (UserNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
