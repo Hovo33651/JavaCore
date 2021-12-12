@@ -76,7 +76,7 @@ public class LessonStudentTest implements AdminUserCommands, GeneralCommands {
         System.out.println("ADMIN OR USER");
         String type = scanner.nextLine();
         try {
-            User user = userStorage.getByEmail(email);
+            userStorage.getByEmail(email);
             System.out.println("USER WITH THIS EMAIL ALREADY EXISTS");
         } catch (UserNotFoundException e) {
             if (type.equals("admin") || type.equals("user")) {
@@ -167,7 +167,7 @@ public class LessonStudentTest implements AdminUserCommands, GeneralCommands {
         System.out.println("PLEASE INPUT YOUR EMAIL");
         String email = scanner.nextLine();
         try {
-            User user = userStorage.getByEmail(email);
+            userStorage.getByEmail(email);
             userStorage.deleteAdmin(email);
             System.out.println("YOUR ACCOUNT HAS BEEN DELETED");
         } catch (UserNotFoundException e) {
