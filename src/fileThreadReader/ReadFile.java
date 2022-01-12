@@ -26,12 +26,10 @@ public class ReadFile implements Runnable {
     @Override
     public void run() {
         int count = 0;
-        String line;
         try {
             List<String> lines = Files.readAllLines(Paths.get(path));
             for (int i = startLine; i < limit; i++) {
-                line = lines.get(i);
-                if (line.contains(keyword)) {
+                if (lines.get(i).contains(keyword)) {
                     count++;
                 }
             }
