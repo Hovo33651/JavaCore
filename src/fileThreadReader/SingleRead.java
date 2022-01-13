@@ -39,16 +39,16 @@ public class SingleRead implements Runnable {
 
 
         List<String> strings = Files.readAllLines(Paths.get(path));
-        List<String> strings1 = strings.subList(1, count/4);
-        List<String> strings2 = strings.subList((count/4)+1, 2*(count/4));
-        List<String> strings3 = strings.subList((2*(count/4))+1, 3*(count/4));
-        List<String> strings4 = strings.subList((3*(count/4))+1, count);
+        List<String> subStrings1 = strings.subList(1, count/4);
+        List<String> subStrings2 = strings.subList((count/4)+1, 2*(count/4));
+        List<String> subStrings3 = strings.subList((2*(count/4))+1, 3*(count/4));
+        List<String> subStrings4 = strings.subList((3*(count/4))+1, count);
 
 
-        new SingleRead(keyword, strings1).t.join();
-        new SingleRead(keyword, strings2).t.join();
-        new SingleRead(keyword, strings3).t.join();
-        new SingleRead(keyword, strings4).t.join();
+        new SingleRead(keyword, subStrings1).t.join();
+        new SingleRead(keyword, subStrings2).t.join();
+        new SingleRead(keyword, subStrings3).t.join();
+        new SingleRead(keyword, subStrings4).t.join();
 
 
 
