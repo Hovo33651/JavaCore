@@ -19,12 +19,15 @@ public class ReadFile implements Runnable {
         this.startLine = startLine;
         this.keyword = keyword;
         t = new Thread(this);
-        t.start();
-
+            t.start();
     }
+
+
+
 
     @Override
     public void run() {
+        long l = System.currentTimeMillis();
         int count = 0;
         try {
             List<String> lines = Files.readAllLines(Paths.get(path));
@@ -33,9 +36,13 @@ public class ReadFile implements Runnable {
                     count++;
                 }
             }
-            System.out.println("The word /" + keyword + "/ repeats " + count + " times");
+            System.out.print("From line <" + startLine + "> to line <" + limit + "> ");
+            System.out.println("the word <<" + keyword + ">> repeats " + count + " times");
+            System.out.println("This thread finished in " + (System.currentTimeMillis() - l) + " milliseconds");
+            System.out.println();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
+
 }
