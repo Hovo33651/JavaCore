@@ -9,13 +9,13 @@ public class ReadFile implements Runnable {
     Thread t;
     String path;
     int startLine;
-    int limit;
+    int limitLine;
     String keyword;
 
 
     ReadFile(String path, int startLine, int limitLine, String keyword) {
         this.path = path;
-        this.limit = limitLine;
+        this.limitLine = limitLine;
         this.startLine = startLine;
         this.keyword = keyword;
         t = new Thread(this);
@@ -31,12 +31,12 @@ public class ReadFile implements Runnable {
         int count = 0;
         try {
             List<String> lines = Files.readAllLines(Paths.get(path));
-            for (int i = startLine; i < limit; i++) {
+            for (int i = startLine; i < limitLine; i++) {
                 if (lines.get(i).contains(keyword)) {
                     count++;
                 }
             }
-            System.out.print("From line <" + startLine + "> to line <" + limit + "> ");
+            System.out.print("From line <" + startLine + "> to line <" + limitLine + "> ");
             System.out.println("the word <<" + keyword + ">> repeats " + count + " times");
             System.out.println("This thread finished in " + (System.currentTimeMillis() - l) + " milliseconds");
             System.out.println();
