@@ -28,10 +28,10 @@ public class SingleRead implements Runnable {
         }
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException { //137088    1274
 
         String path = "C:\\Hovo\\text.txt";
-        String keyword = ",";
+        String keyword = "pharetra";
         int count = (int) Files.lines(Paths.get(path)).count();
 
         System.out.println("all lines:" + count);
@@ -39,10 +39,11 @@ public class SingleRead implements Runnable {
 
 
         List<String> strings = Files.readAllLines(Paths.get(path));
-        List<String> strings1 = strings.subList(1, 150000);
-        List<String> strings2 = strings.subList(150001, 300000);
-        List<String> strings3 = strings.subList(300001, 450000);
-        List<String> strings4 = strings.subList(400001, count);
+        List<String> strings1 = strings.subList(1, count/4);
+        List<String> strings2 = strings.subList((count/4)+1, 2*(count/4));
+        List<String> strings3 = strings.subList((2*(count/4))+1, 3*(count/4));
+        List<String> strings4 = strings.subList((3*(count/4))+1, count);
+
 
         new SingleRead(keyword, strings1).t.join();
         new SingleRead(keyword, strings2).t.join();
