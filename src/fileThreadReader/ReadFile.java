@@ -13,9 +13,9 @@ public class ReadFile implements Runnable {
     String keyword;
 
 
-    ReadFile(String path, int startLine, int limit, String keyword) {
+    ReadFile(String path, int startLine, int limitLine, String keyword) {
         this.path = path;
-        this.limit = limit;
+        this.limit = limitLine;
         this.startLine = startLine;
         this.keyword = keyword;
         t = new Thread(this);
