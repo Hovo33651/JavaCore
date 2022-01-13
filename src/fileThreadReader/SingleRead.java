@@ -29,12 +29,15 @@ public class SingleRead implements Runnable {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
+
         String path = "C:\\Hovo\\text.txt";
+        String keyword = ",";
         int count = (int) Files.lines(Paths.get(path)).count();
 
         System.out.println("all lines:" + count);
         long currentTime = System.currentTimeMillis();
-        String keyword = ",";
+
+
         List<String> strings = Files.readAllLines(Paths.get(path));
         List<String> strings1 = strings.subList(1, 150000);
         List<String> strings2 = strings.subList(150001, 300000);
