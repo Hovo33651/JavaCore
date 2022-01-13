@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SingleRead implements Runnable {
-
-    public static String path = "C:\\Hovo\\text.txt";
     public static AtomicInteger countOfKeyword = new AtomicInteger();
     String keyword;
     Thread t;
@@ -31,7 +29,7 @@ public class SingleRead implements Runnable {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
+        String path = "C:\\Hovo\\text.txt";
         int count = (int) Files.lines(Paths.get(path)).count();
 
         System.out.println("all lines:" + count);
